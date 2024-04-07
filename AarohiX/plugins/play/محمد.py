@@ -10,12 +10,6 @@ import sys
 from config import BANNED_USERS
 from pyrogram import filters
 import config
-from AarohiX.utils.database import (add_served_chat,
-                                       add_served_user,
-                                       blacklisted_chats,
-                                       get_assistant, get_lang,
-                                       get_userss, is_on_off,
-                                       is_served_private_chat)
 
 @app.on_message(
     command(["المطور محمد","محمد","محمد المطور","المبرمج محمد","محمد","محمد"])
