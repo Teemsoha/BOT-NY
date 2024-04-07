@@ -12,8 +12,7 @@ from pyrogram import filters
 import config
 
 @app.on_message(
-    command(["المطور محمد","محمد","محمد المطور","المبرمج محمد","محمد","محمد"])
-    & ~filters.edited
+    command(["المطور محمد","محمد","محمد المطور","المبرمج محمد","محمد","محمد"]
 )
 async def zohary(client: Client, message: Message):
     usr = await client.get_users(1260465030)
