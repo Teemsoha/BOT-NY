@@ -5,21 +5,22 @@ from AarohiX import app
 import config
 
 @app.on_message(
-    command(["اوامر", "الاوامر"])
+    command(["المطور", "السورس", "المصنع"])
 )
-async def mmmezat(client, message):
-    await message.reply_text(
-        f"""مرحبًا بك عزيزي {message.from_user.mention} في بوت فهد\nللحصول على الأوامر راسل البوت 🤍.""",
+async def maker(client: Client, message: Message):
+    await message.reply_photo(
+        photo="https://te.legra.ph/file/8623fdb7fd5bb7349bb3f.jpg",
+        caption="• Dev Bot ↦ 𝖬𝗈𝗁𝖺𝗆𝗆𝖺𝖽 🇵🇸 \n ━━━━━━━━━━━━ \n • Dev ↦ @PPF22 . ",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "للدخول للبوت", url=f"https://t.me/FH4FBot"
+                        "𝖬𝗈𝗁𝖺𝗆𝗆𝖺𝖽 🇵🇸", url=f"tg://openmessage?user_id={config.OWNER_ID}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "- مسح .", callback_data="close"
+                        "🇵🇸", url=config.SUPPORT_CHAT
                     ),
                 ],
             ]
