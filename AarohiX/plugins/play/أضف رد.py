@@ -4,7 +4,7 @@ from strings.filters import command
 from pyrogram import Client, filters, idle 
 from pyrogram.enums import ParseMode, ChatMemberStatus 
 from AarohiX import app
-from config import LOG_GROUP_ID
+from config import LOGGER_ID
 from pyrogram.types import Message
 
   
