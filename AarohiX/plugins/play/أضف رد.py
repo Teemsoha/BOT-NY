@@ -8,7 +8,7 @@ from config import LOGGER_ID
 from pyrogram.types import Message
 
   
- LOG = LOGGER_ID
+LOG = (LOGGER_ID)
 
  def get_rd(text, id):
      chat_id = str(id)
