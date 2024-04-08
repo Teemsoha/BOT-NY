@@ -10,7 +10,7 @@ from pyrogram.types import Message
   
 LOG = (LOGGER_ID)
 
- def get_rd(text, id):
+def get_rd(text, id):
      chat_id = str(id)
      text = text
      with open("getrdod.txt", "r+") as f:
@@ -22,7 +22,7 @@ LOG = (LOGGER_ID)
      return False
 
 
- def add_rd(text, id, rd) -> bool:
+def add_rd(text, id, rd) -> bool:
      chat_id = str(id)
      with open("getrdod.txt", "a+") as f:
         x = f.readlines()
@@ -33,7 +33,7 @@ LOG = (LOGGER_ID)
      return True
 
 
- def del_rd(x):
+def del_rd(x):
     word = str(x).replace("\n","")
     with open("getrdod.txt", "r+") as fp:
        lines = fp.readlines()
@@ -46,7 +46,7 @@ LOG = (LOGGER_ID)
 
 
 
- def del_rdod(id) -> bool:
+def del_rdod(id) -> bool:
      chat_id = str(id)
      gps = open("getrdod.txt").read()
      if chat_id not in gps:
@@ -61,7 +61,7 @@ LOG = (LOGGER_ID)
            return
 
 
- def get_rdod(chat_id):
+def get_rdod(chat_id):
     with open("getrdod.txt", "r+") as f:
         lines = f.readlines()
     text = "• الردود في هذه المجموعة : \n"
@@ -73,7 +73,7 @@ LOG = (LOGGER_ID)
     if text == "• الردود في هذه المجموعة : \n": return False
     else: return f"**{text}**"
        
- async def get_rtba(chat_id: int, user_id: int) -> bool:
+async def get_rtba(chat_id: int, user_id: int) -> bool:
      get = await app.get_chat_member(chat_id, user_id)
      if not get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
        return False
@@ -81,7 +81,7 @@ LOG = (LOGGER_ID)
     
 
 
- @app.on_message(command(["اضف رد"]))
+@app.on_message(command(["اضف رد"]))
  async def adf_rd(app,message:Message):
      get = await get_rtba(message.chat.id, message.from_user.id)
      if not get: return await message.reply("• هذا الأمر لا يخصك")
@@ -93,12 +93,11 @@ LOG = (LOGGER_ID)
      copy = await ask2.copy(LOG)
      rd = copy.id
      a = add_rd(text, message.chat.id, rd)
-     if a: return await ask2.reply("↢ وأضفنا الرد يا حلو 
-༄")
+     if a: return await ask2.reply("↢ وأضفنا الرد يا حلو ༄")
      else: return await ask2.reply("فيه خطأ!")
 
 
- @app.on_message(command(["مسح رد"]))
+@app.on_message(command(["مسح رد"]))
  async def delete_rd(app,message:Message):
     get = await get_rtba(message.chat.id, message.from_user.id)
     if not get: return await message.reply("• هذا الأمر لا يخصك")
@@ -113,7 +112,7 @@ LOG = (LOGGER_ID)
    
 
 
- @app.on_message(command(["مسح الردود"]))
+@app.on_message(command(["مسح الردود"]))
  async def delrdood(app,message:Message):
     get = await get_rtba(message.chat.id, message.from_user.id)
     if not get: return await message.reply("• هذا الأمر لا يخصك")
@@ -124,7 +123,7 @@ LOG = (LOGGER_ID)
 
 
 
- @app.on_message(command(["الردود"]))
+@app.on_message(command(["الردود"]))
  async def get_rdodd(app,message:Message):
      get = await get_rtba(message.chat.id, message.from_user.id)
      if not get: return await message.reply("• هذا الأمر لا يخصك")
@@ -133,7 +132,7 @@ LOG = (LOGGER_ID)
      else: return await message.reply(a)
 
 
- @app.on_message(filters.text & filters.group, group=1)
+@app.on_message(filters.text & filters.group, group=1)
  async def gettt_rd(app, message:Message):
     a = get_rd(message.text, message.chat.id)
     if a: return await app.copy_message(message.chat.id, LOG, a, reply_to_message_id=message.id)
