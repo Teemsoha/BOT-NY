@@ -1,4 +1,4 @@
- import os
+import os
  os.system("pip install tgcrypto && pip install pyromod && clear")
  from strings.filters import command
  from pyrogram import Client, filters, idle
