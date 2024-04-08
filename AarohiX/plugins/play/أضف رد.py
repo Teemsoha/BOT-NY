@@ -1,11 +1,11 @@
 import os
- os.system("pip install tgcrypto && pip install pyromod && clear")
- from strings.filters import command
- from pyrogram import Client, filters, idle
- from pyrogram.enums import ParseMode, ChatMemberStatus 
- from AarohiX import app
- from config import LOG_GROUP_ID
- from pyrogram.types import Message
+os.system("pip install tgcrypto && pip install pyromod && clear")
+from strings.filters import command
+from pyrogram import Client, filters, idle 
+from pyrogram.enums import ParseMode, ChatMemberStatus 
+from AarohiX import app
+from config import LOG_GROUP_ID
+from pyrogram.types import Message
 
   
  LOG =(LOG_GROUP_ID) 
