@@ -108,8 +108,3 @@ async def delete_rd(app, message: Message):
     b = del_rd(x)
     await ask.reply("• تم مسح الرد")
 
-@app.on_message(command(["مسح الردود"]))
-async def delrdood(app, message: Message):
-    get = await get_rtba(message.chat.id, message.from_user.id)
-    if not get:
-       return await
