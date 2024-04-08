@@ -112,4 +112,4 @@ async def delete_rd(app, message: Message):
 async def delrdood(app, message: Message):
     get = await get_rtba(message.chat.id, message.from_user.id)
     if not get:
-        return await
+       return await
