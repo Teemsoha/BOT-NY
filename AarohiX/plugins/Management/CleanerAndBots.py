@@ -15,7 +15,7 @@ stopProcess = False
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("مسح الحسابات المحذوفة","تنظيف",prefixes=""))
+@app.on_message(filters.command(["مسح الحسابات المحذوفة","تنظيف"])
 async def remove(client, message):
   global stopProcess
   try: 
@@ -74,7 +74,7 @@ async def remove(client, message):
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("الادمنية","الأدمنية",prefixes=""))
+@app.on_message(filters.command(["الادمنية","الأدمنية"])
 async def admins(client, message):
   try: 
     adminList = []
@@ -122,7 +122,7 @@ async def admins(client, message):
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("البوتات",prefixes=""))
+@app.on_message(filters.command(["البوتات"])
 async def bots(client, message):  
   try:    
     botList = []
