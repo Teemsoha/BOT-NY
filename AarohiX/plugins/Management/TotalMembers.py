@@ -4,7 +4,7 @@ import csv
 from pyrogram import Client, filters
 from AarohiX import app
 
-@app.on_message(filters.command("الاحصائيات") & admin_filter)
+@app.on_message(filters.command("الاحصائيات", "احصائيات")) & admin_filter)
 def user_command(client, message):
     
     chat_members = app.get_chat_members(message.chat.id)
@@ -18,10 +18,10 @@ def user_command(client, message):
         })
 
     
-    with open("members.txt", "w", newline="") as file:
+    with open("senzir.txt", "w", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=["username", "userid"])
         writer.writeheader()
         for member in members_list:
             writer.writerow(member)
 
-    app.send_document(message.chat.id, "members.txt")
+    app.send_document(message.chat.id, "senzir.txt")
