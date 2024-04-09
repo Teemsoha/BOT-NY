@@ -87,6 +87,11 @@
         "description": "~ اكتب ايدي القناة حتى يتم وصول احداث البوت اليك .",
         "value": "-100",
         "required": true
+     },
+      "BOT_USER": {
+        "description": "حط يوزر البوت !",
+        "value": "",
+        "required": true
         
       },
       "UPSTREAM_REPO": {
