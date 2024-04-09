@@ -25,7 +25,7 @@ def convert_text(_, message):
         hex_representation = text_to_hex(input_text)
         decoded_text = hex_to_text(input_text)
 
-        response_text = f"𝗜𝗻𝗽𝘂𝘁 𝗧𝗲𝘅𝘁➪\n {input_text}\n\n𝗛𝗲𝘅 𝗥𝗲𝗽𝗿𝗲𝘀𝗲𝗻𝘁𝗮𝘁𝗶𝗼𝗻➪\n {hex_representation}\n\n𝗗𝗲𝗰𝗼𝗱𝗲𝗱 𝗧𝗲𝘅𝘁➪\n {decoded_text}\n\n\n𝗕𝗬 ➪@{BOT_USERNAME}"
+        response_text = f"𝗜𝗻𝗽𝘂𝘁 𝗧𝗲𝘅𝘁➪\n {input_text}\n\n𝗛𝗲𝘅 𝗥𝗲𝗽𝗿𝗲𝘀𝗲𝗻𝘁𝗮𝘁𝗶𝗼𝗻➪\n {hex_representation}\n\n𝗗𝗲𝗰𝗼𝗱𝗲𝗱 𝗧𝗲𝘅𝘁➪\n {decoded_text}\n\n\n𝗕𝗬 ➪@{ة}"
 
         message.reply_text(response_text)
     else:
