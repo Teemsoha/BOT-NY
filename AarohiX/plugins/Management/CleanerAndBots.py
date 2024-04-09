@@ -15,7 +15,7 @@ stopProcess = False
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command(["مسح الحسابات المحذوفة","تنظيف"])
+@app.on_message(filters.command(["مسح الحسابات المحذوفة","تنظيف"]))
 async def remove(client, message):
   global stopProcess
   try: 
@@ -74,7 +74,7 @@ async def remove(client, message):
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command(["الادمنية","الأدمنية"])
+@app.on_message(filters.command(["الادمنية","الأدمنية"]))
 async def admins(client, message):
   try: 
     adminList = []
@@ -90,7 +90,7 @@ async def admins(client, message):
       else:
         pass   
     lenAdminList= len(ownerList) + len(adminList)  
-    text2 = f"**مشرفين المجموعـة - {message.chat.title}**\n\n"
+    text2 = f"**طاقم المجموعة - {message.chat.title}**\n\n"
     try:
       owner = ownerList[0]
       if owner.username == None:
@@ -122,7 +122,7 @@ async def admins(client, message):
 
 # ------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command(["البوتات"])
+@app.on_message(filters.command("البوتات"))
 async def bots(client, message):  
   try:    
     botList = []
