@@ -19,15 +19,15 @@ async def pin(_, message):
     name = message.from_user.mention
     
     if message.chat.type == enums.ChatType.PRIVATE:
-        await message.reply_text("*◍ هذه الميزه تعمل فقط بالمجموعات \n\n √*")
+        await message.reply_text("↢ وخر، ما يمديك تستخدم هالميزة بس في المجموعات.")
     elif not replied:
-        await message.reply_text("*◍ قم بعمل ريبلي لثبيت المسدج \n\n √*")
+        await message.reply_text("↢ أبشر ثبتت الرسالة\n\n ༄")
     else:
         user_stats = await app.get_chat_member(chat_id, user_id)
         if user_stats.privileges.can_pin_messages and message.reply_to_message:
             try:
                 await message.reply_to_message.pin()
-                await message.reply_text(f"*◍ تم تثبيت المسدج بنجاح \n\n √*", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("شاهد الرساله 📝", url=replied.link)]]))
+                await message.reply_text(f"↢ أبشر ثبتت الرسالة\n\n ༄", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("شاهد الرساله 📝", url=replied.link)]]))
             except Exception as e:
                 await message.reply_text(str(e))
 
@@ -36,10 +36,10 @@ async def pin(_, message):
 async def pinned(_, message):
     chat = await app.get_chat(message.chat.id)
     if not chat.pinned_message:
-        return await message.reply_text("**ɴᴏ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ ғᴏᴜɴᴅ**")
+        return await message.reply_text("↢ ما في رسالة مُثبتة\n\n ༄")
     try:        
-        await message.reply_text("ʜᴇʀᴇ ɪs ᴛʜᴇ ʟᴀᴛᴇsᴛ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇ",reply_markup=
-        InlineKeyboardMarkup([[InlineKeyboardButton(text="📝 ᴠɪᴇᴡ ᴍᴇssᴀɢᴇ",url=chat.pinned_message.link)]]))  
+        await message.reply_text("↢ قائمة الرسائل المثبتة",reply_markup=
+        InlineKeyboardMarkup([[InlineKeyboardButton(text="📝 عرض الرسالة",url=chat.pinned_message.link)]]))  
     except Exception as er:
         await message.reply_text(er)
 
@@ -55,15 +55,15 @@ async def unpin(_, message):
     name = message.from_user.mention
     
     if message.chat.type == enums.ChatType.PRIVATE:
-        await message.reply_text("*◍ هذه الميزه تعمل فقط بالمجموعات \n\n √*")
+        await message.reply_text("↢ وخر، ما يمديك تستخدم هالميزة بس في المجموعات.")
     elif not replied:
-        await message.reply_text("*◍ قم بعمل ريبلي علي المسدج \n\n `*")
+        await message.reply_text("↢ رد على الرسالة عشان يمديني ألغي تثبيتها")
     else:
         user_stats = await app.get_chat_member(chat_id, user_id)
         if user_stats.privileges.can_pin_messages and message.reply_to_message:
             try:
                 await message.reply_to_message.unpin()
-                await message.reply_text(f"*◍ تم الغاء تثبيت الرساله بنجاح \n\n √*", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("شاهد الرساله 📝", url=replied.link)]]))
+                await message.reply_text(f"↢ أبشر لغيت تثبيت الرسالة\n\n༄", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("شاهد الرساله 📝", url=replied.link)]]))
             except Exception as e:
                 await message.reply_text(str(e))
 
@@ -91,104 +91,104 @@ async def deletechatphoto(_, message):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("setphoto")& admin_filter)
+@app.on_message(filters.command("وضع صورة")& admin_filter)
 async def setchatphoto(_, message):
       reply = message.reply_to_message
       chat_id = message.chat.id
       user_id = message.from_user.id
-      msg = await message.reply_text("ᴘʀᴏᴄᴇssɪɴɢ...")
+      msg = await message.reply_text("↢ جاري...")
       admin_check = await app.get_chat_member(chat_id, user_id)
       if message.chat.type == enums.ChatType.PRIVATE:
-           await msg.edit("`ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴡᴏʀᴋ ᴏɴ ɢʀᴏᴜᴘs !`") 
+           await msg.edit("↢ وخر، هذا الأمر يشتغل بالمجموعات.") 
       elif not reply:
-           await msg.edit("**ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴘʜᴏᴛᴏ ᴏʀ ᴅᴏᴄᴜᴍᴇɴᴛ.**")
+           await msg.edit("↢ رُد على الصورة لوضعها.")
       elif reply:
           try:
              if admin_check.privileges.can_change_info:
                 photo = await reply.download()
                 await message.chat.set_photo(photo=photo)
-                await msg.edit_text("**sᴜᴄᴄᴇssғᴜʟʟʏ ɴᴇᴡ ᴘʀᴏғɪʟᴇ ᴘʜᴏᴛᴏ ɪɴsᴇʀᴛ !\nʙʏ** {}".format(message.from_user.mention))
+                await msg.edit_text("↢ أبشر غيرت صورة المجموعة\nمن : {}\n\n༄".format(message.from_user.mention))
              else:
-                await msg.edit("**sᴏᴍᴇᴛʜɪɴɢ ᴡʀᴏɴɢ ʜᴀᴘᴘᴇɴᴇᴅ ᴛʀʏ ᴀɴᴏᴛʜᴇʀ ᴘʜᴏᴛᴏ !**")
+                await msg.edit("↢ صار فيه خطأ جرب صورة ثانية\n\n༄")
      
           except:
-              await msg.edit("**ᴛʜᴇ ᴜsᴇʀ ᴍᴏsᴛ ɴᴇᴇᴅ ᴄʜᴀɴɢᴇ ɪɴғᴏ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ᴛᴏ ᴄʜᴀɴɢᴇ ɢʀᴏᴜᴘ ᴘʜᴏᴛᴏ !**")
+              await msg.edit("↢ أعطيني صلاحية تغيير معلومات المجموعة\n\n༄")
 
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command("settitle")& admin_filter)
+@app.on_message(filters.command("وضع اسم")& admin_filter)
 async def setgrouptitle(_, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
     user_id = message.from_user.id
-    msg = await message.reply_text("ᴘʀᴏᴄᴇssɪɴɢ...")
+    msg = await message.reply_text("جاري...")
     if message.chat.type == enums.ChatType.PRIVATE:
-          await msg.edit("**ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴡᴏʀᴋ ᴏɴ ɢʀᴏᴜᴘs !**")
+          await msg.edit("↢ هذا الأمر ما يشتغل إلّا بالمجموعات\n\n ༄")
     elif reply:
           try:
             title = message.reply_to_message.text
             admin_check = await app.get_chat_member(chat_id, user_id)
             if admin_check.privileges.can_change_info:
                await message.chat.set_title(title)
-               await msg.edit("**sᴜᴄᴄᴇssғᴜʟʟʏ ɴᴇᴡ ɢʀᴏᴜᴘ ɴᴀᴍᴇ ɪɴsᴇʀᴛ !\nʙʏ** {}".format(message.from_user.mention))
+               await msg.edit("↢ أبشر غيرت اسم المجموعة\nمن {}\n\n༄".format(message.from_user.mention))
           except AttributeError:
-                await msg.edit("**ᴛʜᴇ ᴜsᴇʀ ᴍᴏsᴛ ɴᴇᴇᴅ ᴄʜᴀɴɢᴇ ɪɴғᴏ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ᴛᴏ ᴄʜᴀɴɢᴇ ɢʀᴏᴜᴘ ᴛɪᴛʟᴇ !**")   
+                await msg.edit("↢ أعطيني صلاحية تغيير معلومات المجموعة\n\n༄")   
     elif len(message.command) >1:
         try:
             title = message.text.split(None, 1)[1]
             admin_check = await app.get_chat_member(chat_id, user_id)
             if admin_check.privileges.can_change_info:
                await message.chat.set_title(title)
-               await msg.edit("**sᴜᴄᴄᴇssғᴜʟʟʏ ɴᴇᴡ ɢʀᴏᴜᴘ ɴᴀᴍᴇ ɪɴsᴇʀᴛ !\nʙʏ** {}".format(message.from_user.mention))
+               await msg.edit("↢ أبشر غيرت اسم المجموعة\nمن {}\n\n༄".format(message.from_user.mention))
         except AttributeError:
-               await msg.edit("**ᴛʜᴇ ᴜsᴇʀ ᴍᴏsᴛ ɴᴇᴇᴅ ᴄʜᴀɴɢᴇ ɪɴғᴏ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ᴛᴏ ᴄʜᴀɴɢᴇ ɢʀᴏᴜᴘ ᴛɪᴛʟᴇ !**")
+               await msg.edit("**↢ أحتاج إلى صلاحية تعديل معلومات المجموعة.**")
           
 
     else:
-       await msg.edit("**ʏᴏᴜ ɴᴇᴇᴅ ʀᴇᴘʟʏ ᴛᴏ ᴛᴇxᴛ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ɢʀᴏᴜᴘ ᴛɪᴛʟᴇ **")
+       await msg.edit("↢ رد على كلمة؛ لكي أضعها اسمًا للمجموعة.")
 
 
 # --------------------------------------------------------------------------------- #
 
 
 
-@app.on_message(filters.command("setdiscription") & admin_filter)
+@app.on_message(filters.command("وضع وصف") & admin_filter)
 async def setg_discription(_, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
     user_id = message.from_user.id
-    msg = await message.reply_text("**ᴘʀᴏᴄᴇssɪɴɢ...**")
+    msg = await message.reply_text("جاري...")
     if message.chat.type == enums.ChatType.PRIVATE:
-        await msg.edit("**ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴡᴏʀᴋs ᴏɴ ɢʀᴏᴜᴘs!**")
+        await msg.edit("↢ وخر، هذا الأمر ما يشتغل إلّا بالمجموعات.")
     elif reply:
         try:
             discription = message.reply_to_message.text
             admin_check = await app.get_chat_member(chat_id, user_id)
             if admin_check.privileges.can_change_info:
                 await message.chat.set_description(discription)
-                await msg.edit("**sᴜᴄᴄᴇssғᴜʟʟʏ ɴᴇᴡ ɢʀᴏᴜᴘ ᴅɪsᴄʀɪᴘᴛɪᴏɴ ɪɴsᴇʀᴛ!**\nʙʏ {}".format(message.from_user.mention))
+                await msg.edit("↢ أبشر غيرت وصف المجموعة\nمن {}\n\n༄".format(message.from_user.mention))
         except AttributeError:
-            await msg.edit("**ᴛʜᴇ ᴜsᴇʀ ᴍᴜsᴛ ʜᴀᴠᴇ ᴄʜᴀɴɢᴇ ɪɴғᴏ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ᴛᴏ ᴄʜᴀɴɢᴇ ɢʀᴏᴜᴘ ᴅɪsᴄʀɪᴘᴛɪᴏɴ!**")   
+            await msg.edit("↢ أحتاج إلى صلاحية تعديل معلومات المجموعة؛ لكي أغير وصف المجموعة")   
     elif len(message.command) > 1:
         try:
             discription = message.text.split(None, 1)[1]
             admin_check = await app.get_chat_member(chat_id, user_id)
             if admin_check.privileges.can_change_info:
                 await message.chat.set_description(discription)
-                await msg.edit("**sᴜᴄᴄᴇssғᴜʟʟʏ ɴᴇᴡ ɢʀᴏᴜᴘ ᴅɪsᴄʀɪᴘᴛɪᴏɴ ɪɴsᴇʀᴛ!**\nʙʏ {}".format(message.from_user.mention))
+                await msg.edit("↢ أبشر غيرت وصف المجموعة\nمن {}\n\n༄".format(message.from_user.mention))
         except AttributeError:
-            await msg.edit("**ᴛʜᴇ ᴜsᴇʀ ᴍᴜsᴛ ʜᴀᴠᴇ ᴄʜᴀɴɢᴇ ɪɴғᴏ ᴀᴅᴍɪɴ ʀɪɢʜᴛs ᴛᴏ ᴄʜᴀɴɢᴇ ɢʀᴏᴜᴘ ᴅɪsᴄʀɪᴘᴛɪᴏɴ!**")
+            await msg.edit("↢ أحتاج إلى صلاحية تعديل معلومات المجموعة")
     else:
-        await msg.edit("**ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʀᴇᴘʟʏ ᴛᴏ ᴛᴇxᴛ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴄʜᴀɴɢᴇ ɢʀᴏᴜᴘ ᴅɪsᴄʀɪᴘᴛᴏɴ!**")
+        await msg.edit("*رد على اسم؛ عشان أحطه وصف\n\n༄*")
 
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command(["بوتي غادر", "تيتو غادر"], prefixes=["/", "@", "", "#"]) & admin_filter)
+@app.on_message(filters.command(["غادر", "فهد غادر"], prefixes=["/", "@", "", "#"]) & admin_filter)
 async def bot_leave(_, message):
     chat_id = message.chat.id
-    text = "*◍ تم الخروج بنجاح من المجموعه \n\n √*"
+    text = "↢ تم غادرت مطوري\n\n༄"
     await message.reply_text(text)
     await app.leave_chat(chat_id=chat_id, delete=True)
     await delete_served_chat(chat_id)
