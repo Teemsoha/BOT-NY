@@ -63,7 +63,7 @@ async def unpin(_, message):
         if user_stats.privileges.can_pin_messages and message.reply_to_message:
             try:
                 await message.reply_to_message.unpin()
-                await message.reply_text(f"↢ أبشر لغيت تثبيت الرسالة\n\n༄", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("شاهد الرساله 📝", url=replied.link)]]))
+                await message.reply_text(f"↢ أبشر لغيت تثبيت الرسالة\n\n༄", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("شاهد الرسالة 📝", url=replied.link)]]))
             except Exception as e:
                 await message.reply_text(str(e))
 
