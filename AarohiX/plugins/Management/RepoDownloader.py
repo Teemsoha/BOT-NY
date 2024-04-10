@@ -4,7 +4,7 @@ import shutil
 import os
 from AarohiX import app
 
-@app.on_message(filters.command(["جيثهاب"]))
+@app.on_message(filters.command(["جيثهاب", ""]))
 def download_repo(_, message):
     if len(message.command) != 2:
         message.reply_text("↢ يُرجى إعطاء رابط الريبو لـ تنزيله")
