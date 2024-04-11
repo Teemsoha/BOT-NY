@@ -15,7 +15,6 @@ async def arbic(_, query: CallbackQuery):
 ※ [استخدم الازرار لمعرفه الاوامر المستخدمه.](https://t.me/Tepthon) """,
         reply_markup=InlineKeyboardMarkup(
             [
-                [
                     InlineKeyboardButton(
                         "اضف البوت اللي مجموعتك ",
                         url=f"https://t.me/{app.username}?startgroup=true",
@@ -53,11 +52,9 @@ async def english(_, query: CallbackQuery):
         f" [※A Telegram Music Bot Based Mongodb](https://t.me/Tepthon) \n ※[Add Me To Ur Chat For and Help and And Support Click On Buttons](https://t.me/Tepthon) \n ※[These Features AI Based](https://t.me/Tepthon)",
         reply_markup=InlineKeyboardMarkup(
             [
-                [
                     InlineKeyboardButton(
                         "Add me to your Group ",
-                        url=f"https://t.me/{app.username}?startgroup=true",
-                    )
+                        url=f"https://t.me/{app.username}?startgroup=true",)
                 ],
                 [InlineKeyboardButton(" Basic Guide", callback_data="cAfyon"),
                 
@@ -127,7 +124,6 @@ async def cbcmds(_, query: CallbackQuery):
 √ __Powered by 𝖥𝗈𝗋 HAMD""",
         reply_markup=InlineKeyboardMarkup(
             [
-                [
                     InlineKeyboardButton("Admin Cmd", callback_data="cbadmin"),
                     InlineKeyboardButton("Sudo Cmd", callback_data="cbsudo"),
                 ],[
@@ -230,7 +226,6 @@ async def acbcmds(_, query: CallbackQuery):
 \n __ Developer by [𝖥𝗈𝗋 HAMD](https://t.me/PPF22)""",
         reply_markup=InlineKeyboardMarkup(
             [
-                [
                     InlineKeyboardButton("اوامر التشغيل", callback_data="bbasic"),
                     InlineKeyboardButton("اوامر الادمن", callback_data="badmin"),
                 ],[
@@ -317,7 +312,6 @@ async def acbadmin(_, query: CallbackQuery):
         f"""<b> يمكنك التواصل معي \n عن طريق معرفي اول جروب التواصل بلاسفل..↑↓ \n\n [𝖥𝗈𝗋 HAMD](https://t.me/PPF22)</b>""",
         reply_markup=InlineKeyboardMarkup(
             [
-                [
                     InlineKeyboardButton("القناة", url=f"https://t.me/Tepthon"),
                     InlineKeyboardButton("الجروب", url=f"https://t.me/Tepthon_Help"),
                 ],
