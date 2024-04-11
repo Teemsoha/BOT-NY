@@ -52,8 +52,32 @@ REPLY_MESSAGE_BUTTONS = [
     ],    
   
 ]
-
 @app.on_message(filters.regex("^/start"), group=39)
+async def cpanel(_, message: Message):  
+    message.reply_photo(
+        photo=f"{START_IMG_URL}",
+        reply_markup=InlineKeyboardMarkup(
+            [
+            InlineKeyboardButton(
+                text="ARABIC",
+                callback_data=f"arbic",
+            ),
+            InlineKeyboardButton(
+                text="ENGLISH",
+                callback_data=f"english",
+            ),
+        ],
+        [
+                    InlineKeyboardButton(
+                        text=_["S_B_7"], user_id=config.OWNER_ID)
+            
+            ]
+         ]
+     )
+  )
+
+
+@app.on_message(filters.regex("Tepthon"), group=39)
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         kep = ReplyKeyboardMarkup([
