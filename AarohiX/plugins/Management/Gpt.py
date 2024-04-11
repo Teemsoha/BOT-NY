@@ -15,7 +15,7 @@ async def chat_gpt(bot, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "• استخدم الأمر هكذا :\n\n • الذكاء الاصنتاعي + سؤالك"
+                "• استخدم الأمر هكذا :\n\n • الذكاء الاصطناعي + سؤالك"
             )
         else:
             a = message.text.split(' ', 1)[1]
@@ -28,7 +28,7 @@ async def chat_gpt(bot, message):
                     end_time = time.time()
                     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
                     await message.reply_text(
-                        f" {x}      انضم هُنا لُطفًا › @Tepthon",
+                        f" {x}   انضم هُنا لُطفًا › @Tepthon",
                         parse_mode=ParseMode.MARKDOWN
                     )
                 else:
