@@ -1,35 +1,43 @@
+import config
 from pyrogram import filters, Client
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
-from AnonXMusic import app as Client
+from AarohiX import app as Client
 
 
 
 @Client.on_callback_query(filters.regex("arbic"))
 async def arbic(client: Client, query: CallbackQuery):
-    await query.answer("القائمة الرئيسية")
     await query.edit_message_text(f"**♪ مرحبا عزيزي : {query.from_user.mention} 💎 .\n\n♪ انا بوت تشغيل موسيقى صوتية ومرئية 💎 .\n♪ قم بإضافة البوت إلي مجموعتك او قناتك 💎 .\n♪ سيتم تفعيل البوت وانضمام المساعد تلقائياً 💎 .\n♪ استخدم الازرار لمعرفه اوامر الاستخدام 💎 .**",
         reply_markup=InlineKeyboardMarkup([
-[InlineKeyboardButton("♪ مبرمج السورس 🧑‍✈️", url=f"https://t.me/Almortagel_12")],
 [InlineKeyboardButton("♪ طريقة التشغيل 🧠", callback_data="bcmds"),InlineKeyboardButton("♪ طريقة التفعيل 🦸", callback_data="bhowtouse")],
-[InlineKeyboardButton("♪ جروب البوت 🤖", url=config.SUPPORT_CHAT),InlineKeyboardButton("♪ قناه التحديثات 🐉", url=config.SUPPORT_CHANNEL)],
-[InlineKeyboardButton(f"{devname}", user_id=f"{dev}")],
+InlineKeyboardButton(
+[
+            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID),
+            InlineKeyboardButton(text="مبرمج السورس",                 url=f"https://t.me/PPF22"),
+        ],
+        [
+            InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
+            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
 [InlineKeyboardButton("اضف البوت الي مجموعتك او قناتك ⚡",url=f"https://t.me/{bot.username}?startgroup=true")],]),disable_web_page_preview=True)
 
 @Client.on_callback_query(filters.regex("english"))
 async def english(client: Client, query: CallbackQuery):    
-    await query.answer("Home Start")
     await query.edit_message_text(
     f"""ᴀ ᴛᴇʟᴇɢʀᴀᴍ ᴍụѕɪᴄ ʙᴏᴛ
 ᴘʟᴀʏᴇᴅ ᴍụѕɪᴄ ᴀɴᴅ ᴠɪᴅᴇᴏ ɪɴ ᴠᴄ
 ʙᴏᴛ ᴏɴʟɪɴᴇ ɴᴏᴡ 
 ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏụʀ ᴄʜᴀᴛ
-ᴘᴏᴡᴇʀᴇᴅ ʙʏ @Almortagel_12""",
+ᴘᴏᴡᴇʀᴇᴅ ʙʏ @PPF22""",
 
         reply_markup=InlineKeyboardMarkup([
-[InlineKeyboardButton("♪ The owner of the source 🧑‍✈️", url=f"https://t.me/DEV_Mostafa")],
 [InlineKeyboardButton("♪ Operation method 🧠", callback_data="cbcmds"),InlineKeyboardButton("♪ Activation method 🦸", callback_data="cbhowtouse")],
-[InlineKeyboardButton("♪ Bot Group 🤖", url=config.SUPPORT_CHAT),InlineKeyboardButton("♪ Channel Updates 🐉", url=config.SUPPORT_CHANNEL)],
-[InlineKeyboardButton(f"{devname}", user_id=f"{dev}")],
+[
+            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID),
+            InlineKeyboardButton(text="مبرمج السورس",                 url=f"https://t.me/PPF22"),
+        ],
+        [
+            InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
+            InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
 [InlineKeyboardButton("Add the bot to your group or channel ⚡",url=f"https://t.me/{bot.username}?startgroup=true")],]),disable_web_page_preview=True)
 
 
@@ -46,7 +54,7 @@ async def cbguides(_, query: CallbackQuery):
 5.) ѕᴏᴍᴇᴛɪᴍᴇѕ, ʀᴇʟᴏᴀᴅɪɴɢ ᴛʜᴇ ʙᴏᴛ ʙʏ ụѕɪɴɢ /ʀᴇʟᴏᴀᴅ ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ʜᴇʟᴘ ʏᴏụ ᴛᴏ ғɪх ѕᴏᴍᴇ ᴘʀᴏʙʟᴇᴍ.
 📌 ɪғ ᴛʜᴇ ụѕᴇʀʙᴏᴛ ɴᴏᴛ ᴊᴏɪɴᴇᴅ ᴛᴏ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ, ᴍᴀᴋᴇ ѕụʀᴇ ɪғ ᴛʜᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ᴀʟʀᴇᴀᴅʏ ᴛụʀɴᴇᴅ ᴏɴ.
 💡 ɪғ ʏᴏụ ʜᴀᴠᴇ ᴀ ғᴏʟʟᴏᴡ-ụᴘ ǫụᴇѕᴛɪᴏɴѕ ᴀʙᴏụᴛ ᴛʜɪѕ ʙᴏᴛ, ʏᴏụ ᴄᴀɴ ᴛᴇʟʟ ɪᴛ ᴏɴ ᴍʏ ѕụᴘᴘᴏʀᴛ ᴄʜᴀᴛ ʜᴇʀᴇ: @AlmortagelTech2
-⋮ __ ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙʏ @Almortagel_12""",
+⋮ __ ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙʏ @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("ɢᴏ ʙᴀᴄᴋ", callback_data="english")]]
         ),
@@ -59,7 +67,7 @@ async def cbcmds(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""✨ **ʜᴇʟʟᴏ [{query.message.from_user.first_name}](tg://user?id={query.message.from_user.id}) !**
 » ᴘʀᴇѕѕ ᴛʜᴇ ʙụᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴛᴏ ʀᴇᴀᴅ ᴛʜᴇ ᴇхᴘʟᴀɴᴀᴛɪᴏɴ ᴀɴᴅ ѕᴇᴇ ᴛʜᴇ ʟɪѕᴛ ᴏғ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅѕ !
-⋮ __ᴘᴏᴡᴇʀᴇᴅ ʙʏ @Almortagel_12 A.I__""",
+⋮ __ᴘᴏᴡᴇʀᴇᴅ ʙʏ @PPF22 A.I__""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -87,7 +95,7 @@ async def cbbasic(_, query: CallbackQuery):
 » /searq (ǫụᴇʀʏ) - ѕᴇᴀʀᴄʜ ᴀ ʏᴏụᴛụʙᴇ ᴠɪᴅᴇᴏ ʟɪɴᴋ
 » /ping - ѕʜᴏᴡ ᴛʜᴇ ʙᴏᴛ ᴘɪɴɢ ѕᴛᴀᴛụѕ
 » /alive - ѕʜᴏᴡ ᴛʜᴇ ʙᴏᴛ ᴀʟɪᴠᴇ ɪɴғᴏ (ɪɴ ɢʀᴏụᴘ)
-◖⋮◗ __ ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙʏ  @Almortagel_12""",
+◖⋮◗ __ ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙʏ  @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("ɢᴏ ʙᴀᴄᴋ", callback_data="cbcmds")]]
         ),
@@ -104,7 +112,7 @@ async def cbadmin(_, query: CallbackQuery):
 » /skip - ѕᴡɪᴛᴄʜ ᴛᴏ ɴᴇхᴛ ѕᴛʀᴇᴀᴍ
 » /stop - ѕᴛᴏᴘ ᴛʜᴇ ѕᴛʀᴇᴀᴍɪɴɢ
 » /loob - ʟᴏᴏᴘ ᴛʜᴇ ѕᴛʀᴇᴀᴍɪɴɢ
-◖⋮◗ __ ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙʏ  @Almortagel_12""",
+◖⋮◗ __ ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙʏ  @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("ɢᴏ ʙᴀᴄᴋ", callback_data="cbcmds")]]
         ),
@@ -124,7 +132,7 @@ async def cbsudo(_, query: CallbackQuery):
 » • تفعيل سجل التشغيل • : لتفعيل سجل التشغيل ف المجموعه 
 » • تعطيل سجل التشغيل • : لتعطيل سجل التشغيل ف المجموعه
 » • تغير مكان سجل التشغيل • : لتغير مجموعة السجل
-⋮ __ Developer by  @Almortagel_12""",
+⋮ __ Developer by  @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("ɢᴏ ʙᴀᴄᴋ", callback_data="cbcmds")]]
         ),
@@ -143,7 +151,7 @@ async def acbguides(_, query: CallbackQuery):
 5.) **لتحديث قائمة الادمنيه /Reload اذا واجهت خطأ قم بكتابة الامر ⋮.**
 📌 ** اذا لم يستطع الحساب المساعد الانضمام اللي المحادثة المرئيه قم بإعادة تشغيل المحادثه ⋮.**
 💡 **في حال واجهت اي مشكلة اخري يمكنك التواصل مع المطور من هن : {SUPPORT_GROUP} **
-⋮ __ Developer by  @Almortagel_12""",
+⋮ __ Developer by  @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("العودة", callback_data="arbic")]]
         ),
@@ -155,7 +163,7 @@ async def acbcmds(_, query: CallbackQuery):
     await query.edit_message_text(
         f""" **Hello [{query.message.from_user.first_name}](tg://user?id={query.message.from_user.id}) !**
 » **اتبع الازرار بالاسفل لمعرفة طريقة التشغيل ⋮**
-⋮ __ Developer by  @Almortagel_12""",
+⋮ __ Developer by  @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -183,7 +191,7 @@ async def acbbasic(_, query: CallbackQuery):
 » نزل + اسم الاغنيه - لتحميل ملف صوتي 
 » بنج - عرض سرعة الاستجابة
 » سورس - لعرض معلومات البوت 
-◖⋮◗ __ Developer by  @Almortagel_12""",
+◖⋮◗ __ Developer by  @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("العودة", callback_data="bcmds")]]
         ),
@@ -199,7 +207,7 @@ async def acbadmin(_, query: CallbackQuery):
 » تخطي - لتخطي تشغيل الحالي
 » ايقاف او اسكت - لايقاف تشغيل الحالي 
 » تكرار او كررها - لتكرار التشغيل الحالي
-◖⋮◗ __ Developer by  @Almortagel_12""",
+◖⋮◗ __ Developer by  @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("العودة", callback_data="bcmds")]]
         ),
@@ -220,7 +228,7 @@ async def sudo_set(client: Client, query: CallbackQuery):
 » • تعطيل سجل التشغيل • : لتعطيل سجل التشغيل ف المجموعه
 » • تغير مكان سجل التشغيل • : لتغير مجموعة السجل 
 
-⋮ __ Developer by  @Almortagel_12""",
+⋮ __ Developer by  @PPF22""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("العودة", callback_data="bcmds")]]
         ),
