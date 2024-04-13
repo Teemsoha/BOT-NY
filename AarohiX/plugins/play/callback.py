@@ -18,7 +18,7 @@ InlineKeyboardButton(
         [
             InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
-[InlineKeyboardButton("اضف البوت الي مجموعتك او قناتك ⚡",url=f"https://t.me/{bot.username}?startgroup=true")],]),disable_web_page_preview=True)
+[InlineKeyboardButton("اضف البوت الي مجموعتك او قناتك ⚡",url=f"https://t.me/{bot.username}?startgroup=true")
 
 @Client.on_callback_query(filters.regex("english"))
 async def english(client: Client, query: CallbackQuery):    
@@ -38,8 +38,7 @@ async def english(client: Client, query: CallbackQuery):
         [
             InlineKeyboardButton(text=_["S_B_6"], url=config.SUPPORT_CHANNEL),
             InlineKeyboardButton(text=_["S_B_2"], url=config.SUPPORT_CHAT)
-[InlineKeyboardButton("Add the bot to your group or channel ⚡",url=f"https://t.me/{bot.username}?startgroup=true")],]),disable_web_page_preview=True)
-
+[InlineKeyboardButton("Add the bot to your group or channel ⚡",url=f"https://t.me/{bot.username}?startgroup=true")
 
 @Client.on_callback_query(filters.regex("cbhowtouse"))
 async def cbguides(_, query: CallbackQuery):
