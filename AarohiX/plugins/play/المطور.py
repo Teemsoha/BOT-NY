@@ -5,22 +5,22 @@ from AarohiX import app
 import config
 
 @app.on_message(
-    command(["المطور", "السورس", "المصنع"])
+    command(["المطور", "السورس", "المبرمج"])
 )
 async def maker(client: Client, message: Message):
     await message.reply_photo(
-        photo="https://te.legra.ph/file/8623fdb7fd5bb7349bb3f.jpg",
-        caption="• Dev Bot ↦ 𝖬𝗈𝗁𝖺𝗆𝗆𝖺𝖽 🇵🇸 \n ━━━━━━━━━━━━ \n • Dev ↦ @PPF22 . ",
+        photo="https://telegra.ph/file/17eb3640be82fc02d1b91.jpg",
+        caption="• ხ᥆ƚ ძᥱ᥎ᥱᥣ᥆ρᥱᖇ 🇵🇸 \n ━━━━━━━━━━━━ \n • bot ↦ {config.BOT_USER} . ",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "𝖬𝗈𝗁𝖺𝗆𝗆𝖺𝖽 🇵🇸", url=f"tg://openmessage?user_id={config.OWNER_ID}"
+                        "ძᥱ᥎ᥣ᥆ρᥱᖇ 🇵🇸", url=f"tg://openmessage?user_id={config.OWNER_ID}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🇵🇸", url=config.SUPPORT_CHAT
+                        "𝗖𝗛 🇵🇸", url=config.SUPPORT_CHAT
                     ),
                 ],
             ]
