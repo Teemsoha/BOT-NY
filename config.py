@@ -19,6 +19,8 @@ Muntazer = getenv("muntazer", "Tepthon")
 
 senzir = getenv("senzir", "Tepthon")
 
+BOT_USER = getenv("BOT_USER" , "")
+
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 2097152))
