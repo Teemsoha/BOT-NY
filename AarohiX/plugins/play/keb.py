@@ -56,7 +56,7 @@ REPLY_MESSAGE_BUTTONS = [
 async def cpanel(_, message: Message):  
     message.reply_photo(
         photo=f"{START_IMG_URL}",
-        reply_markup=InlineKeyboardMarkup(
+        reply_markup=InlineKeyboardMarkup]
             [
             InlineKeyboardButton(
                 text="ARABIC",
