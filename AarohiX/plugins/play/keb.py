@@ -7,77 +7,7 @@ from AarohiX import (Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app)
 
 
 
-REPLY_MESSAGE = "**↢ اختر ما تُريد من القائمة 🕊️**"
-
-REPLY_MESSAGE_BUTTONS = [
-    [
-        ("المطور")
-    ],
-    
-    [
-        ("اقتباس"),
-        ("شعر")
-    ],
-    [
-        ("صور")
-    ],
-   
-    [
-        ("لو خيروك"),
-        ("هيدرات")
-    ],
-    [
-        ("يوت")
-    ],
-    [
-        ("اذكار")
-    ],
-    [
-        ("غنيلي"),
-        ("تلاوات")
-    ],
-    [
-        ("الشيخ نقشبندي"),
-        ("متحركة")
-        
-    ],
-    [
-        ("لو خيروك"),
-        ("حساب العمر")
-    ],    
- [
-        
-             ("↢ أضف البوت إلى مجموعتك 🤍 .")
-        
-    ],    
-  
-]
-@app.on_message(filters.regex("^/start"), group=39)
-async def cpanel(_, message: Message):  
-    message.reply_photo(
-        photo=f"{START_IMG_URL}",
-        reply_markup=InlineKeyboardMarkup)
-            [
-            InlineKeyboardButton(
-                text="ARABIC",
-                callback_data=f"arbic",
-            ),
-            InlineKeyboardButton(
-                text="ENGLISH",
-                callback_data=f"english",
-            ),
-        ],
-        [
-                    InlineKeyboardButton(
-                        text=_["S_B_7"], user_id=config.OWNER_ID)
-            
-            ]
-]
-]
-     ]
-
-
-@app.on_message(filters.regex("Tepthon"), group=39)
+@app.on_message(filters.regex("/start"), group=39)
 async def cpanel(_, message: Message):             
         text = REPLY_MESSAGE
         kep = ReplyKeyboardMarkup([
@@ -113,10 +43,11 @@ def reply_to_HEY(Client, message):
         reply_markup=InlineKeyboardMarkup(
             [
             [
-                InlineKeyboardButton("ᯓ سورس ميوزك تيتو", url=f"https://t.me/WX_PM"),
+                InlineKeyboardButton("ᯓ سورس ميوزك سينزر", url=f"https://t.me/IC_X_K"),
             ]
          ]
      )
   )
 
-#write by teto @G_7_Rr
+# Edit and write errors by T.me/programer_senzir
+
