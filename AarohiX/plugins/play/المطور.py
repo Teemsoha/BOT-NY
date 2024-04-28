@@ -10,7 +10,7 @@ import config
 async def maker(client: Client, message: Message):
     await message.reply_photo(
         photo="https://telegra.ph/file/17eb3640be82fc02d1b91.jpg",
-        caption="• ხ᥆ƚ ძᥱ᥎ᥱᥣ᥆ρᥱᖇ 🇵🇸 \n ━━━━━━━━━━━━ \n • bot ↦ {config.BOT_USER} . ",
+        caption="• ხ᥆ƚ ძᥱ᥎ᥱᥣ᥆ρᥱᖇ 🇵🇸 \n ━━━━━━━━━━━━ \n •  . ",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
