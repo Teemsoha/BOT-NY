@@ -26,7 +26,7 @@ async def cpanel(_, message: Message):
 ["افاتار بنات","افاتار شباب"],
 ["❎ ¦ حذف الكيبورد"]], resize_keyboard=True)
         await message.reply(
-              text=text,
+              "مرحبا فيك بسورس دينا",
                reply_markup=kep,quote=True
         )
 
