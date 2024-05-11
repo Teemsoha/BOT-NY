@@ -14,12 +14,12 @@
     "env": {
       "API_ID": {
         "description": "~ اكتب الايبي ايدي .",
-        "value": "",
+        "value": "27455984",
         "required": true
       },
       "API_HASH": {
         "description": "~ اكتب الايبي هاش .",
-        "value": "",
+        "value": "62d5f68ce2e9189636967120220f5755",
         "required": true
       },
       "BOT_TOKEN": {
@@ -34,7 +34,7 @@
       },
       "OWNER_ID": {
         "description": "~ اكتب ايدي المالك او اتركها كما هي .",
-        "value": "6975380739",
+        "value": "6893989153",
         "required": true
         
       },
@@ -52,7 +52,7 @@
       },
       "Muntazer": {
         "description": "~  ضع قناة الاشتراك الاجباري ( لاتنسى رفع البوت مشرف في القناة ) .",
-        "value": "WX_PM",
+        "value": "My1mind1",
         "required": true
         
       },
@@ -85,18 +85,18 @@
      },
       "LOGGER_ID": {
         "description": "~ اكتب ايدي القناة حتى يتم وصول احداث البوت اليك .",
-        "value": "-100",
+        "value": "-1002106772200",
         "required": true
      },
       "BOT_USER": {
         "description": "حط يوزر البوت !",
-        "value": "",
+        "value": "A_I_S_Sbot",
         "required": true
         
       },
       "UPSTREAM_REPO": {
         "description": "~  لاتغيرها أبدا .",
-        "value": "https://github.com/RRYR7/TePthon",
+        "value": "https://github.com/Teemsoha/BOT-NY",
         "required": true
       }
     },
